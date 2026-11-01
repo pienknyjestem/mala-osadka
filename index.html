@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mała Osadka – polski serwer Minecraft</title>
+<meta name="description" content="Mała Osadka – spokojny polski serwer survival z pracami, działkami i startowym konkursem. Minecraft Java Edition.">
+<style>
+:root{--bg:#fbf6ec;--card:#fffdf8;--fg:#2a2118;--muted:#6f6254;--line:#e5d9c3;--accent:#a23b2a;--accent-fg:#fff;--ok:#2f7d3a;--bad:#a23b2a;--hero:#f6e3c0}
+@media (prefers-color-scheme:dark){:root{--bg:#171b2b;--card:#1f2438;--fg:#f1ead9;--muted:#a9a4b8;--line:#323855;--accent:#f6b26b;--accent-fg:#1b2a49;--ok:#6fbf5d;--bad:#ff8a73;--hero:#1b2a49}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding-inline:max(16px,env(safe-area-inset-left,0px))}
+header.hero{background:var(--hero);border-bottom:1px solid var(--line);padding-block:56px 44px}
+h1{font:700 clamp(2rem,6vw,3.2rem)/1.1 Georgia,"Times New Roman",serif;margin:0 0 12px;text-wrap:balance}
+h2{font:700 1.6rem/1.2 Georgia,serif;margin:0 0 14px;text-wrap:balance}
+p{margin:0 0 12px}
+.lead{font-size:1.15rem;color:var(--muted);max-width:60ch}
+section{padding-block:36px;border-bottom:1px solid var(--line)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.grid>*{min-width:0}
+.ip{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:22px}
+code.addr{font:600 1.15rem ui-monospace,Consolas,monospace;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 14px;overflow-wrap:anywhere}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-fg);border:0;border-radius:8px;padding:10px 18px;font:600 1rem inherit;text-decoration:none;cursor:pointer}
+.btn.alt{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.status{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+.dot{width:12px;height:12px;border-radius:50%;background:var(--muted);display:inline-block;margin-right:8px}
+.dot.on{background:var(--ok)}.dot.off{background:var(--bad)}
+.big{font:700 1.4rem Georgia,serif}
+.small{color:var(--muted);font-size:.9rem}
+ul{padding-left:1.2em;margin:0}li{margin-bottom:6px}
+.prize{border-left:4px solid var(--accent)}
+footer{padding-block:28px;color:var(--muted);font-size:.9rem}
+a{color:var(--accent)}
+.btn,.btn.alt{color:inherit}.btn{color:var(--accent-fg)}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+  <h1>Mała Osadka</h1>
+  <p class="lead">Spokojny polski serwer survival. Pracujesz, zarabiasz, kupujesz działkę i budujesz własny kawałek osady. Bez pośpiechu i bez wielkich tłumów.</p>
+  <div class="ip">
+    <code class="addr" id="addr">mc.mala-osadka.pl</code>
+    <button class="btn" id="copy" type="button">Kopiuj adres</button>
+    <a class="btn alt" href="https://discord.gg/qn88CyjqT">Discord</a>
+  </div>
+  <p class="small" style="margin-top:10px">Minecraft Java Edition. Po wejściu zarejestruj się komendą <b>/register hasło hasło</b>.</p>
+</div></header>
+
+<main class="wrap">
+
+<section id="status">
+  <h2>Status serwera</h2>
+  <div class="card status" aria-live="polite">
+    <div><span class="dot" id="dot"></span><span class="big" id="state">Sprawdzam…</span></div>
+    <div><span class="big" id="players">–</span> <span class="small">graczy online</span></div>
+    <div><span class="big" id="ver">–</span> <span class="small">wersja</span></div>
+  </div>
+  <p class="small" style="margin-top:8px">Dane z publicznego sprawdzacza serwerów, odświeżane co minutę.</p>
+</section>
+
+<section id="konkurs">
+  <h2>Konkurs na start</h2>
+  <div class="card prize">
+    <p><b>Dojdź do 40 poziomu w pracy Górnik do końca 20.11 i weź udział w losowaniu 2 kluczy.</b></p>
+    <ul>
+      <li>Liczy się poziom pracy <b>Górnik</b>. Sprawdzisz go komendą <code>/jobs stats</code>.</li>
+      <li>Losowanie obejmuje wszystkich, którzy osiągną 40 poziom do końca 20.11.</li>
+      <li>Jedna osoba to jedno zgłoszenie.</li>
+      <li>Termin losowania i zwycięzców ogłosimy na Discordzie.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="gra">
+  <h2>Jak się u nas gra</h2>
+  <div class="grid">
+    <div class="card"><b>Prace</b><p class="small">Górnik, Drwal, Rolnik, Rybak, Łowca i Budowniczy. Za pracę dostajesz pieniądze, limit to 6000 $ na dobę (reset o 04:00).</p></div>
+    <div class="card"><b>Działki</b><p class="small">Chronisz swój teren komendami GriefPrevention. Działki kupujesz za zarobione pieniądze.</p></div>
+    <div class="card"><b>Bonusy</b><p class="small">Happy Hour x2 od poniedziałku do piątku w godz. 19:00-20:00. W weekend działa Happy Weekend x1,25.</p></div>
+    <div class="card"><b>Sklep kosmetyczny</b><p class="small">Kolory nicku i tytuły kupisz za pieniądze z gry (<code>/kosmetyki</code>). Nic nie daje przewagi w rozgrywce.</p></div>
+  </div>
+</section>
+
+<section id="start">
+  <h2>Jak dołączyć</h2>
+  <ol style="padding-left:1.2em;margin:0">
+    <li>Uruchom Minecraft Java Edition i dodaj serwer o adresie <b id="addr2">mc.mala-osadka.pl</b>.</li>
+    <li>Po wejściu wpisz <code>/register hasło hasło</code>, a przy następnych wejściach <code>/login hasło</code>.</li>
+    <li>Na spawnie przeczytaj hologramy z zasadami i wybierz pierwszą pracę.</li>
+    <li>Dołącz na Discorda, gdzie ogłaszamy konkursy i zmiany.</li>
+  </ol>
+  <p class="small" style="margin-top:12px">Na jednym adresie IP można zarejestrować najwyżej 2 konta.</p>
+</section>
+
+</main>
+
+<footer><div class="wrap">Mała Osadka. Serwer nie jest powiązany z Mojang ani Microsoft.</div></footer>
+
+<script>
+// Zmień tylko tutaj po zakupie domeny, np. "mala-osadka.pl".
+var ADRES = "mc.mala-osadka.pl";
+document.getElementById("addr").textContent = ADRES;
+document.getElementById("addr2").textContent = ADRES;
+
+document.getElementById("copy").onclick = function () {
+  var b = this;
+  navigator.clipboard.writeText(ADRES).then(function () { b.textContent = "Skopiowano"; },
+    function () { b.textContent = "Zaznacz i skopiuj ręcznie"; });
+};
+
+function status() {
+  fetch("https://api.mcsrvstat.us/3/" + encodeURIComponent(ADRES))
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      var on = d.online === true;
+      document.getElementById("dot").className = "dot " + (on ? "on" : "off");
+      document.getElementById("state").textContent = on ? "Online" : "Offline";
+      document.getElementById("players").textContent = on && d.players ? d.players.online + " / " + d.players.max : "–";
+      document.getElementById("ver").textContent = on && d.version ? d.version : "–";
+    })
+    .catch(function () {
+      document.getElementById("state").textContent = "Brak danych";
+    });
+}
+status();
+setInterval(status, 60000);
+</script>
+</body>
+</html>
