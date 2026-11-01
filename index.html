@@ -38,6 +38,21 @@ ul{padding-left:1.2em;margin:0}li{margin-bottom:6px}
 footer{padding-block:28px;color:var(--muted);font-size:.9rem}
 a{color:var(--accent)}
 .btn,.btn.alt{color:inherit}.btn{color:var(--accent-fg)}
+header.hero{background:linear-gradient(180deg,var(--hero),var(--bg))}
+.card{box-shadow:0 1px 0 var(--line),0 6px 18px -12px rgba(0,0,0,.35)}
+.grid .card{border-top:3px solid var(--accent)}
+.tbl{overflow-x:auto;padding:8px 12px}
+table{border-collapse:collapse;width:100%;min-width:420px;text-align:center}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left}
+tbody tr:last-child td{border-bottom:0}
+tr.hl td{font-weight:700;background:var(--hero)}
+:root{--t0:#6f6254;--t1:#2f7d3a;--t2:#1f6f9a;--t3:#b8740f}
+@media (prefers-color-scheme:dark){:root{--t0:#a9a4b8;--t1:#6fbf5d;--t2:#6cc4ee;--t3:#f6b26b}}
+.t0{color:var(--t0)}.t1{color:var(--t1)}.t2{color:var(--t2)}.t3{color:var(--t3)}
+.grid .t0b{border-top-color:var(--t0)}.grid .t1b{border-top-color:var(--t1)}.grid .t2b{border-top-color:var(--t2)}.grid .t3b{border-top-color:var(--t3)}
+.t0b b{color:var(--t0)}.t1b b{color:var(--t1)}.t2b b{color:var(--t2)}.t3b b{color:var(--t3)}
+.btn{transition:transform .12s}.btn:hover{transform:translateY(-1px)}
 </style>
 </head>
 <body>
@@ -85,6 +100,32 @@ a{color:var(--accent)}
     <div class="card"><b>Działki</b><p class="small">Chronisz swój teren komendami GriefPrevention. Działki kupujesz za zarobione pieniądze.</p></div>
     <div class="card"><b>Bonusy</b><p class="small">Happy Hour x2 od poniedziałku do piątku w godz. 19:00-20:00. W weekend działa Happy Weekend x1,25.</p></div>
     <div class="card"><b>Sklep kosmetyczny</b><p class="small">Kolory nicku i tytuły kupisz za pieniądze z gry (<code>/kosmetyki</code>). Nic nie daje przewagi w rozgrywce.</p></div>
+  </div>
+</section>
+
+<section id="nagroda">
+  <h2>Codzienna nagroda i losowanie</h2>
+  <p>Raz dziennie wpisz <code>/nagroda</code> (po 10 minutach gry) i zakręć kołem nagród. Im dłuższa seria kolejnych dni, tym większa szansa na lepszą nagrodę. W 7. dniu serii masz gwarantowaną co najmniej rzadką nagrodę.</p>
+  <div class="card tbl">
+    <table>
+      <thead><tr><th>Dzień serii</th><th class="t0">Zwykła</th><th class="t1">Niezwykła</th><th class="t2">Rzadka</th><th class="t3">Legendarna</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>80%</td><td>17%</td><td>3%</td><td>0%</td></tr>
+        <tr><td>2</td><td>72%</td><td>22%</td><td>5%</td><td>1%</td></tr>
+        <tr><td>3</td><td>64%</td><td>27%</td><td>8%</td><td>1%</td></tr>
+        <tr><td>4</td><td>55%</td><td>35%</td><td>9%</td><td>1%</td></tr>
+        <tr><td>5</td><td>45%</td><td>38%</td><td>15%</td><td>2%</td></tr>
+        <tr><td>6</td><td>35%</td><td>42%</td><td>20%</td><td>3%</td></tr>
+        <tr class="hl"><td>7</td><td>0%</td><td>0%</td><td>95%</td><td>5%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small" style="margin-top:8px">W 7. dniu zwykła i niezwykła nagroda są podnoszone do rzadkiej. Aktualną listę i szanse zobaczysz w grze: <code>/nagroda pula</code>.</p>
+  <div class="grid" style="margin-top:14px">
+    <div class="card t0b"><b>Zwykła</b><p class="small">500 $</p></div>
+    <div class="card t1b"><b>Niezwykła</b><p class="small">1500 $ albo bonus +25% do zarobków na 2 godziny</p></div>
+    <div class="card t2b"><b>Rzadka</b><p class="small">5000 $ albo kolor nicku do wyboru w <code>/kolory</code></p></div>
+    <div class="card t3b"><b>Legendarna</b><p class="small">20000 $ albo 10000 $ i bonus +25% na 6 godzin</p></div>
   </div>
 </section>
 
