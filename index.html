@@ -31,6 +31,9 @@ code.addr{font:600 1.15rem ui-monospace,Consolas,monospace;background:var(--card
 .small{color:var(--muted);font-size:.9rem}
 ul{padding-left:1.2em;margin:0}li{margin-bottom:6px}
 .prize{border-left:4px solid var(--accent)}
+.award{display:flex;gap:14px;align-items:center;background:var(--hero);border:1px solid var(--accent);border-radius:10px;padding:12px 16px;margin-bottom:14px}
+.award-n{font:700 2.2rem/1 Georgia,serif;color:var(--accent)}
+.award b{font-size:1.15rem}
 footer{padding-block:28px;color:var(--muted);font-size:.9rem}
 a{color:var(--accent)}
 .btn,.btn.alt{color:inherit}.btn{color:var(--accent-fg)}
@@ -63,7 +66,8 @@ a{color:var(--accent)}
 <section id="konkurs">
   <h2>Konkurs na start</h2>
   <div class="card prize">
-    <p><b>Dojdź do 40 poziomu w pracy Górnik do końca 20.11 i weź udział w losowaniu 2 kluczy.</b></p>
+    <div class="award"><span class="award-n">2×</span><div><b>klucz do gry Minecraft</b><br><span class="small">pełna wersja Java &amp; Bedrock, wartość ok. 125 zł za sztukę</span></div></div>
+    <p><b>Dojdź do 40 poziomu w pracy Górnik do końca 20.11 i weź udział w losowaniu.</b> Wylosujemy dwie osoby, każda dostanie jeden klucz.</p>
     <ul>
       <li>Liczy się poziom pracy <b>Górnik</b>. Sprawdzisz go komendą <code>/jobs stats</code>.</li>
       <li>Losowanie obejmuje wszystkich, którzy osiągną 40 poziom do końca 20.11.</li>
