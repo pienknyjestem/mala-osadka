@@ -2,203 +2,652 @@
 <html lang="pl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mała Osadka – polski serwer Minecraft</title>
-<meta name="description" content="Mała Osadka – spokojny polski serwer survival z pracami, działkami i startowym konkursem. Minecraft Java Edition.">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mała Osadka – polski serwer survival Minecraft | Start 6.11, 18:00</title>
+<meta name="description" content="Polski survival na Minecraft Java 26.3. Start: piątek 6.11.2026, 18:00. Prace, chronione działki, uczciwa ekonomia i 30 graczy. IP: mc.mala-osadka.pl">
 <link rel="canonical" href="https://mala-osadka.pl/">
+<meta name="theme-color" content="#141d33">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="Mała Osadka">
+<meta property="og:url" content="https://mala-osadka.pl/">
+<meta property="og:title" content="Mała Osadka – nowy survival startuje 6.11 o 18:00">
+<meta property="og:description" content="Prace, chronione działki i uczciwa ekonomia. Maksymalnie 30 graczy. Konkurs: 2× Minecraft Java do 22.11.2026. IP: mc.mala-osadka.pl">
+<meta property="og:image" content="https://mala-osadka.pl/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Lobby Małej Osadki o zachodzie słońca, logo serwera i data startu 6.11, 18:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mała Osadka – nowy survival startuje 6.11 o 18:00">
+<meta name="twitter:description" content="Prace, chronione działki i uczciwa ekonomia. IP: mc.mala-osadka.pl">
+<meta name="twitter:image" content="https://mala-osadka.pl/img/og.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Pixelify+Sans:wght@500;700&display=swap">
+<link rel="preload" as="image" href="img/hero-tall-560.webp" media="(max-width: 760px)">
+<link rel="preload" as="image" href="img/hero-wide-1920.webp" media="(min-width: 761px)">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Start serwera Minecraft Mała Osadka",
+  "description": "Start polskiego serwera survival Mała Osadka (Minecraft Java 26.3). Adres: mc.mala-osadka.pl",
+  "startDate": "2026-11-06T18:00:00+01:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+  "isAccessibleForFree": true,
+  "inLanguage": "pl",
+  "image": "https://mala-osadka.pl/img/og.jpg",
+  "location": { "@type": "VirtualLocation", "url": "https://mala-osadka.pl/" },
+  "organizer": { "@type": "Organization", "name": "Mała Osadka", "url": "https://mala-osadka.pl/", "logo": "https://mala-osadka.pl/img/logo-192.png" }
+}
+</script>
+
 <style>
-:root{--bg:#fbf6ec;--card:#fffdf8;--fg:#2a2118;--muted:#6f6254;--line:#e5d9c3;--accent:#a23b2a;--accent-fg:#fff;--ok:#2f7d3a;--bad:#a23b2a;--hero:#f6e3c0}
-@media (prefers-color-scheme:dark){:root{--bg:#171b2b;--card:#1f2438;--fg:#f1ead9;--muted:#a9a4b8;--line:#323855;--accent:#f6b26b;--accent-fg:#1b2a49;--ok:#6fbf5d;--bad:#ff8a73;--hero:#1b2a49}}
+:root{
+  --bg:#fbf6ec; --surface:#fffdf8; --sunk:#f3ead8; --fg:#2a2118; --muted:#6a5d4f; --line:#e3d6bf;
+  --accent:#a23b2a; --accent-fg:#fff; --ok:#2f7d3a;
+  --night:#141d33; --night-2:#1b2a49; --night-line:#2f3d63; --cream:#f6eedc; --cream-muted:#c3bba9;
+  --amber:#f6b26b; --amber-deep:#c97a2c; --amber-ink:#1b2a49;
+  --head:"Fraunces",Georgia,"Times New Roman",serif;
+  --pixel:"Pixelify Sans",ui-monospace,Consolas,monospace;
+  --body:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#11182b; --surface:#18213a; --sunk:#0d1323; --fg:#f1ead9; --muted:#aaa3b6; --line:#2b3553;
+  --accent:#f6b26b; --accent-fg:#1b2a49; --ok:#6fbf5d; color-scheme:dark;
+}}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-.wrap{max-width:860px;margin:0 auto;padding-inline:max(16px,env(safe-area-inset-left,0px))}
-header.hero{background:var(--hero);border-bottom:1px solid var(--line);padding-block:56px 44px}
-h1{font:700 clamp(2rem,6vw,3.2rem)/1.1 Georgia,"Times New Roman",serif;margin:0 0 12px;text-wrap:balance}
-h2{font:700 1.6rem/1.2 Georgia,serif;margin:0 0 14px;text-wrap:balance}
-p{margin:0 0 12px}
-.lead{font-size:1.15rem;color:var(--muted);max-width:60ch}
-section{padding-block:36px;border-bottom:1px solid var(--line)}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
-.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
-.grid>*{min-width:0}
-.ip{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:22px}
-code.addr{font:600 1.15rem ui-monospace,Consolas,monospace;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 14px;overflow-wrap:anywhere}
-.btn{display:inline-block;background:var(--accent);color:var(--accent-fg);border:0;border-radius:8px;padding:10px 18px;font:600 1rem inherit;text-decoration:none;cursor:pointer}
-.btn.alt{background:transparent;color:var(--fg);border:1px solid var(--line)}
-.status{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
-.dot{width:12px;height:12px;border-radius:50%;background:var(--muted);display:inline-block;margin-right:8px}
-.dot.on{background:var(--ok)}.dot.off{background:var(--bad)}
-.big{font:700 1.4rem Georgia,serif}
-.small{color:var(--muted);font-size:.9rem}
-ul{padding-left:1.2em;margin:0}li{margin-bottom:6px}
-.prize{border-left:4px solid var(--accent)}
-.award{display:flex;gap:14px;align-items:center;background:var(--hero);border:1px solid var(--accent);border-radius:10px;padding:12px 16px;margin-bottom:14px}
-.award-n{font:700 2.2rem/1 Georgia,serif;color:var(--accent)}
-.award b{font-size:1.15rem}
-footer{padding-block:28px;color:var(--muted);font-size:.9rem}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 var(--body)}
+img{max-width:100%;height:auto;display:block}
 a{color:var(--accent)}
-.btn,.btn.alt{color:inherit}.btn{color:var(--accent-fg)}
-header.hero{background:linear-gradient(180deg,var(--hero),var(--bg))}
-.card{box-shadow:0 1px 0 var(--line),0 6px 18px -12px rgba(0,0,0,.35)}
-.grid .card{border-top:3px solid var(--accent)}
-.tbl{overflow-x:auto;padding:8px 12px}
-table{border-collapse:collapse;width:100%;min-width:420px;text-align:center}
+code{font:.92em ui-monospace,Consolas,monospace;background:var(--sunk);border:1px solid var(--line);border-radius:5px;padding:1px 6px;white-space:nowrap}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+h1,h2,h3{font-family:var(--head);text-wrap:balance;margin:0}
+h2{font-size:clamp(1.75rem,4.6vw,2.6rem);line-height:1.1;letter-spacing:-.01em}
+h3{font-size:1.35rem;line-height:1.2}
+p{margin:0}
+.kicker{font:700 .78rem/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+
+/* ---------- przyciski i adres ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border:0;border-radius:6px;
+  font:700 1rem/1 var(--body);text-decoration:none;cursor:pointer;transition:transform .1s,filter .1s}
+.btn:active{transform:translateY(2px)}
+.btn-main{background:var(--amber);color:var(--amber-ink);box-shadow:inset 0 -4px 0 var(--amber-deep)}
+.btn-main:hover{filter:brightness(1.06)}
+.btn-ghost{background:transparent;color:inherit;border:1px solid currentColor;opacity:.9}
+.btn-ghost:hover{opacity:1}
+.ip{display:flex;align-items:stretch;border-radius:8px;overflow:hidden;max-width:460px;
+  background:#0c1222;border:2px solid #3a4870;box-shadow:inset 3px 3px 0 #070b16}
+.ip-addr{flex:1;min-width:0;display:flex;align-items:center;padding:0 16px;font:500 clamp(1.05rem,4.4vw,1.3rem)/1 var(--pixel);color:#fff;letter-spacing:.02em;
+  overflow-wrap:anywhere;user-select:all}
+.ip .btn{border-radius:0;min-height:56px;flex:none}
+
+/* ---------- hero ---------- */
+.hero{position:relative;background:var(--night);color:var(--cream);overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:-1}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:60% 40%}
+.hero-bg::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(20,29,51,.96) 0%,rgba(20,29,51,.86) 36%,rgba(20,29,51,.25) 68%,rgba(20,29,51,.05) 100%),
+             linear-gradient(0deg,rgba(20,29,51,.9) 0%,rgba(20,29,51,0) 30%)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:max(16px,env(safe-area-inset-top,0px));padding-bottom:8px}
+.brand{display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none;font:700 1.15rem/1 var(--head)}
+.brand img{width:40px;height:40px;border-radius:8px;image-rendering:pixelated;box-shadow:0 0 0 2px rgba(246,178,107,.55)}
+.pill{display:inline-flex;align-items:center;gap:8px;font:600 .82rem/1 var(--body);padding:8px 12px;border-radius:99px;
+  background:rgba(12,18,34,.7);border:1px solid var(--night-line);color:var(--cream);white-space:nowrap}
+.pill .dot{width:9px;height:9px;border-radius:50%;background:#8a8fa3}
+.pill.on .dot{background:#5fd068;box-shadow:0 0 0 3px rgba(95,208,104,.25)}
+.pill.off .dot{background:#ff7a66}
+.hero-in{display:grid;gap:22px;padding-block:clamp(40px,8vh,96px) clamp(44px,8vh,88px);max-width:1080px}
+.hero-in>*{max-width:560px}
+.sticker{justify-self:start;display:inline-block;transform:rotate(-2deg);background:var(--amber);color:var(--amber-ink);
+  font:700 clamp(.95rem,3.6vw,1.1rem)/1 var(--pixel);letter-spacing:.04em;padding:10px 14px;border-radius:4px;box-shadow:4px 4px 0 rgba(0,0,0,.35)}
+.hero h1{font-size:clamp(2.5rem,9vw,4.4rem);line-height:1.02;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.lead{font-size:clamp(1.05rem,3.6vw,1.2rem);line-height:1.55;color:#e7dfcd}
+.count{display:flex;gap:8px;align-items:stretch}
+.count div{flex:1;max-width:96px;text-align:center;padding:10px 4px 8px;border-radius:6px;background:rgba(12,18,34,.78);
+  border:2px solid #3a4870;box-shadow:inset 2px 2px 0 #070b16}
+.count b{display:block;font:800 clamp(1.7rem,8vw,2.4rem)/1 var(--body);color:#fff;font-variant-numeric:tabular-nums}
+.count span{display:block;margin-top:6px;font:600 .68rem/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--cream-muted)}
+.when{font-size:.95rem;color:var(--cream-muted)}
+.when b{color:var(--cream)}
+.live{display:none;font:700 1.15rem/1.4 var(--body);color:#fff}
+.is-live .count,.is-live .when{display:none}
+.is-live .live{display:block}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+.cta-row a{color:var(--cream);font-weight:600}
+.fineprint{font-size:.88rem;color:var(--cream-muted)}
+.nw{white-space:nowrap}
+
+@media (max-width:760px){
+  .hero-bg{bottom:auto;height:min(64svh,560px)}
+  .hero-bg img{object-position:50% 30%}
+  .hero-bg::after{background:linear-gradient(180deg,rgba(20,29,51,.55) 0%,rgba(20,29,51,.1) 22%,rgba(20,29,51,.35) 60%,var(--night) 100%)}
+  .hero-bg{height:min(52svh,440px)}
+  .hero-in{padding-top:min(22svh,190px);padding-bottom:40px;gap:14px}
+  .hero h1{font-size:clamp(2.2rem,10.5vw,3rem)}
+  .lead{font-size:1rem}
+  .count div{padding:7px 2px 6px}
+  .count b{font-size:1.6rem}
+  .count span{margin-top:4px}
+  .ip{max-width:none}
+  .ip-addr{padding:0 12px;font-size:1.02rem}
+  .ip .btn{min-height:54px;padding:0 16px}
+}
+@media (max-width:359px){
+  .ip{flex-direction:column}
+  .ip-addr{justify-content:center;min-height:50px}
+  .ip .btn{width:100%}
+}
+
+/* ---------- sekcje ---------- */
+section{padding-block:clamp(56px,9vw,104px)}
+.intro{max-width:640px;display:grid;gap:12px;margin-bottom:clamp(32px,5vw,56px)}
+.intro p{color:var(--muted);font-size:1.08rem}
+
+.small{font-size:.88rem;color:var(--muted)}
+.facts{padding-block:22px;border-bottom:1px solid var(--line);background:var(--surface)}
+.facts .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px 32px}
+.facts .wrap>div{display:flex;align-items:baseline;gap:8px}
+.facts b{font:700 1.5rem/1 var(--head);color:var(--accent)}
+.facts span{color:var(--muted);font-size:.95rem}
+
+.feature{display:grid;gap:22px 48px;align-items:center;grid-template-columns:1fr}
+.feature+.feature{margin-top:clamp(48px,7vw,88px)}
+.feature figure{margin:0}
+.feature img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:10px;background:var(--sunk)}
+.feature figcaption{margin-top:8px;font-size:.85rem;color:var(--muted)}
+.feature .txt{display:grid;gap:14px}
+.feature .txt>p{color:var(--muted)}
+.feature ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.feature li{padding-left:22px;position:relative}
+.feature li::before{content:"";position:absolute;left:0;top:.55em;width:10px;height:10px;background:var(--accent);
+  box-shadow:inset -2px -2px 0 rgba(0,0,0,.25)}
+@media (min-width:820px){
+  .feature{grid-template-columns:1.15fr 1fr}
+  .feature.flip figure{order:2}
+}
+.jobs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:2px;margin:4px 0 0;border-radius:8px;overflow:hidden;border:1px solid var(--line);background:var(--line)}
+.jobs div{background:var(--surface);padding:10px 12px}
+.jobs dt{font-weight:700}
+.jobs dd{margin:0;font-size:.88rem;color:var(--muted);line-height:1.4}
+
+/* konkurs */
+.contest{background:var(--night-2);color:var(--cream);position:relative;overflow:hidden}
+.contest .wrap{display:grid;gap:28px 56px;align-items:center}
+@media (min-width:820px){.contest .wrap{grid-template-columns:auto 1fr}}
+.prize{display:flex;align-items:center;gap:18px}
+.prize-n{font:700 clamp(4.5rem,16vw,7.5rem)/.85 var(--head);color:var(--amber);text-shadow:5px 5px 0 rgba(0,0,0,.35)}
+.prize-t{font:600 1.05rem/1.35 var(--body);color:var(--cream-muted)}
+.prize-t b{display:block;font:700 1.45rem/1.15 var(--head);color:#fff}
+.contest .kicker{color:var(--amber)}
+.contest h2{color:#fff}
+.contest p{color:#e2d9c6;max-width:60ch}
+.goal{display:flex;flex-wrap:wrap;gap:10px;margin-block:18px 6px}
+.goal span{font:600 .92rem/1 var(--body);padding:9px 12px;border-radius:6px;background:rgba(12,18,34,.6);border:1px solid var(--night-line)}
+.goal span b{color:var(--amber)}
+.contest details{border-color:var(--night-line)}
+.contest summary{color:#fff}
+.contest a{color:var(--amber)}
+.contest code{background:rgba(12,18,34,.6);border-color:var(--night-line);color:#fff}
+
+/* bonusy */
+.days{display:grid;gap:2px;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--line);max-width:760px}
+.day{display:grid;grid-template-columns:7.5rem 1fr auto;gap:4px 16px;align-items:center;background:var(--surface);padding:14px 16px}
+.day b{font-weight:700}
+.day span{color:var(--muted);font-size:.95rem}
+.day strong{font:800 1.35rem/1 var(--body);font-variant-numeric:tabular-nums;color:var(--accent);text-align:right}
+.day.hot{background:var(--sunk)}
+@media (max-width:520px){.day{grid-template-columns:1fr auto}.day span{grid-column:1;grid-row:2}.day strong{grid-row:1/3;grid-column:2}}
+.daily{margin-top:28px;display:grid;gap:10px;max-width:760px}
+.daily p{color:var(--muted)}
+
+/* rozwijane szczegoly */
+details{border-top:1px solid var(--line);max-width:760px}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;padding:16px 36px 16px 0;font-weight:700;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);font:700 1.4rem/1 var(--body);color:var(--accent)}
+details[open] summary::after{content:"–"}
+.contest summary::after{color:var(--amber)}
+.det{padding:0 0 20px;display:grid;gap:12px}
+.det ul,.det ol{margin:0;padding-left:1.2em;display:grid;gap:6px}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:440px;font-size:.93rem;text-align:center}
 th,td{padding:8px 10px;border-bottom:1px solid var(--line)}
 th:first-child,td:first-child{text-align:left}
 tbody tr:last-child td{border-bottom:0}
-tr.hl td{font-weight:700;background:var(--hero)}
-:root{--t0:#6f6254;--t1:#2f7d3a;--t2:#1f6f9a;--t3:#b8740f}
-@media (prefers-color-scheme:dark){:root{--t0:#a9a4b8;--t1:#6fbf5d;--t2:#6cc4ee;--t3:#f6b26b}}
-.t0{color:var(--t0)}.t1{color:var(--t1)}.t2{color:var(--t2)}.t3{color:var(--t3)}
-.grid .t0b{border-top-color:var(--t0)}.grid .t1b{border-top-color:var(--t1)}.grid .t2b{border-top-color:var(--t2)}.grid .t3b{border-top-color:var(--t3)}
-.t0b b{color:var(--t0)}.t1b b{color:var(--t1)}.t2b b{color:var(--t2)}.t3b b{color:var(--t3)}
-.dc{display:block;margin-top:18px;max-width:560px;padding:18px 22px;border-radius:12px;background:#5865f2;color:#fff;text-decoration:none;box-shadow:0 8px 22px -10px rgba(88,101,242,.8);transition:transform .12s,background .12s}
-.dc:hover{transform:translateY(-2px);background:#4752c4}
-.dc-t{display:block;font:700 1.35rem/1.3 Georgia,serif}
-.dc-s{display:block;margin-top:2px;font-size:.95rem;opacity:.92}
-.btn{transition:transform .12s}.btn:hover{transform:translateY(-1px)}
+tr.hl td{font-weight:700;background:var(--sunk)}
+.t1{color:var(--ok)}.t2{color:#1f6f9a}.t3{color:#b8740f}
+@media (prefers-color-scheme:dark){.t2{color:#6cc4ee}.t3{color:#f6b26b}}
+
+/* dolaczanie */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:14px;max-width:760px;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;padding:18px;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:6px;background:var(--night-2);color:var(--amber);
+  font:800 1.3rem/1 var(--body);box-shadow:inset -3px -3px 0 rgba(0,0,0,.35)}
+.steps h3{font-size:1.15rem;margin-bottom:4px}
+.steps p{color:var(--muted)}
+.steps .ip{margin-top:12px}
+.steps .ip-addr{font-size:1.05rem}
+@media (max-width:520px){
+  .steps li{grid-template-columns:36px 1fr;gap:12px;padding:16px 14px}
+  .steps li::before{width:36px;height:36px;font-size:1.2rem}
+  .steps .ip{margin-left:-48px}
+}
+.discord{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:28px;max-width:760px;padding:18px;border-radius:10px;background:#5865f2;color:#fff}
+.discord p{flex:1 1 260px}
+.discord b{display:block;font:700 1.15rem/1.3 var(--head)}
+.discord .btn{background:#fff;color:#3c45a5}
+
+@media (min-width:900px){
+  .split{display:grid;grid-template-columns:minmax(260px,1fr) 1.7fr;gap:0 64px;align-items:start}
+  .split>.intro{position:sticky;top:32px;margin-bottom:0}
+}
+.col{min-width:0}
+footer{background:var(--night);color:var(--cream-muted);font-size:.92rem;padding-block:40px calc(40px + env(safe-area-inset-bottom,0px))}
+footer .wrap{display:grid;gap:14px}
+footer a{color:var(--cream)}
+footer .brand{color:var(--cream)}
+
+/* przyklejony pasek na telefonie */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:10px;align-items:center;
+  padding:10px max(14px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px));
+  background:rgba(20,29,51,.96);border-top:1px solid var(--night-line);color:var(--cream);
+  transform:translateY(110%);transition:transform .2s}
+.dock.show{transform:none}
+.dock span{flex:1;min-width:0;font:500 1rem/1.2 var(--pixel);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dock .btn{min-height:44px;padding:0 16px}
+@media (min-width:761px){.dock{display:none}}
+@media (max-width:760px){footer{padding-bottom:calc(104px + env(safe-area-inset-bottom,0px))}}
 </style>
 </head>
 <body>
-<header class="hero"><div class="wrap">
-  <h1>Mała Osadka</h1>
-  <p class="lead">Spokojny polski serwer survival. Pracujesz, zarabiasz, kupujesz działkę i budujesz własny kawałek osady. Bez pośpiechu i bez wielkich tłumów.</p>
-  <div class="ip">
-    <code class="addr" id="addr">mc.mala-osadka.pl</code>
-    <button class="btn" id="copy" type="button">Kopiuj adres</button>
+
+<header class="hero" id="top">
+  <picture class="hero-bg">
+    <source media="(max-width: 760px)" srcset="img/hero-tall-560.webp 560w, img/hero-tall-800.webp 800w" sizes="100vw">
+    <img src="img/hero-wide-1920.webp" srcset="img/hero-wide-1280.webp 1280w, img/hero-wide-1920.webp 1920w" sizes="100vw"
+         width="1920" height="750" fetchpriority="high"
+         alt="Lobby Małej Osadki o zachodzie słońca: drewniane domy, czerwony targ i skalna wieża">
+  </picture>
+
+  <div class="top wrap">
+    <a class="brand" href="#top"><img src="img/logo-192.png" width="40" height="40" alt="">Mała Osadka</a>
+    <span class="pill" id="pill" hidden><span class="dot"></span><span id="pill-t"></span></span>
   </div>
-  <a class="dc" href="https://discord.gg/qn88CyjqT">
-    <span class="dc-t">Dołącz do nas na Discordzie</span>
-    <span class="dc-s">Konkursy, ogłoszenia, pomoc i znajomi do gry. Wejście w kilka sekund.</span>
-  </a>
-  <p class="small" style="margin-top:10px">Minecraft Java Edition. Po wejściu zarejestruj się komendą <b>/register hasło hasło</b>.</p>
-</div></header>
 
-<main class="wrap">
+  <div class="hero-in wrap" id="hero-in">
+    <span class="sticker" id="sticker">START · PT 6.11 · 18:00</span>
+    <h1>Mały serwer.<br><em>Dużo możliwości.</em></h1>
+    <p class="lead">Polski survival, w którym zarabiasz pracą, kupujesz chronioną działkę i budujesz swój kawałek osady. Najwyżej 30 graczy naraz, więc szybko poznasz sąsiadów.</p>
 
-<section id="status">
-  <h2>Status serwera</h2>
-  <div class="card status" aria-live="polite">
-    <div><span class="dot" id="dot"></span><span class="big" id="state">Sprawdzam…</span></div>
-    <div><span class="big" id="players">–</span> <span class="small">graczy online</span></div>
-    <div><span class="big" id="ver">–</span> <span class="small">wersja</span></div>
+    <div>
+      <div class="count" aria-hidden="true">
+        <div><b id="cd-d">--</b><span>dni</span></div>
+        <div><b id="cd-h">--</b><span>godz</span></div>
+        <div><b id="cd-m">--</b><span>min</span></div>
+        <div><b id="cd-s">--</b><span>sek</span></div>
+      </div>
+      <p class="when" style="margin-top:10px">Start: <b>piątek, 6 listopada 2026, godz. 18:00</b></p>
+      <p class="live">Wystartowaliśmy 6 listopada. Serwer działa, wbijaj!</p>
+    </div>
+
+    <div class="ip" id="ip">
+      <span class="ip-addr">mc.mala-osadka.pl</span>
+      <button class="btn btn-main" type="button" data-copy>Kopiuj IP</button>
+    </div>
+    <div class="cta-row">
+      <a href="#dolacz">Jak dołączyć w 2 minuty</a>
+      <a href="#konkurs">Konkurs: 2× Minecraft Java</a>
+    </div>
+    <p class="fineprint"><span class="nw">Minecraft Java Edition 26.3</span> · <span class="nw">konta premium i non-premium</span></p>
   </div>
-  <p class="small" style="margin-top:8px">Dane z publicznego sprawdzacza serwerów, odświeżane co minutę.</p>
-</section>
+</header>
 
-<section id="konkurs">
-  <h2>Konkurs na start</h2>
-  <div class="card prize">
-    <div class="award"><span class="award-n">2×</span><div><b>kod na Minecraft: Java Edition</b><br><span class="small">kto ma już grę, może wybrać 75 zł w kodzie Paysafecard</span></div></div>
-    <p><b>Dojdź do 40 poziomu w pracy Górnik do 22.11 (23:59:59).</b> Nagrody dostają dwie pierwsze osoby, które to osiągną. Bez losowania.</p>
-    <ul>
-      <li>Liczy się poziom pracy <b>Górnik</b>. Sprawdzisz go komendą <code>/jobs stats</code>.</li>
-      <li>Musisz mieć połączone konto z Discordem (<code>/discord link</code>). Nagrodę wysyłamy tylko na to konto.</li>
-      <li>Kolejność ustala ogłoszenie na Discordzie o osiągnięciu 40 poziomu.</li>
-      <li>Zakaz makr, farm AFK i wielu kont. Pełny regulamin jest na naszym <a href="https://discord.gg/qn88CyjqT">Discordzie</a>, na kanale <b>konkurs</b>.</li>
-    </ul>
+<div class="facts">
+  <div class="wrap">
+    <div><b>6</b><span>prac do wyboru</span></div>
+    <div><b>625</b><span>bloków działki na start</span></div>
+    <div><b>30</b><span>graczy naraz</span></div>
+    <div><b>0 zł</b><span>płacisz za grę</span></div>
   </div>
-</section>
+</div>
 
+<main>
 <section id="gra">
-  <h2>Jak się u nas gra</h2>
-  <div class="grid">
-    <div class="card"><b>Prace</b><p class="small">Górnik, Drwal, Rolnik, Rybak, Łowca i Budowniczy. Za pracę dostajesz pieniądze, limit to 6000 $ na dobę (reset o 04:00).</p></div>
-    <div class="card"><b>Działki</b><p class="small">Chronisz swój teren komendami GriefPrevention. Działki kupujesz za zarobione pieniądze.</p></div>
-    <div class="card"><b>Bonusy</b><p class="small">Happy Hour x2 od poniedziałku do piątku w godz. 19:00-20:00. W weekend działa Happy Weekend x1,25. <a href="#bonusy">Szczegóły</a></p></div>
-    <div class="card"><b>Sklep kosmetyczny</b><p class="small">Kolory nicku i tytuły kupisz za pieniądze z gry (<code>/kosmetyki</code>). Nic nie daje przewagi w rozgrywce.</p></div>
+  <div class="wrap">
+    <div class="intro">
+      <p class="kicker">Jak się tu gra</p>
+      <h2>Zwykły survival, tylko z celem</h2>
+      <p>Grasz jak zawsze: kopiesz, ścinasz, uprawiasz i budujesz. Różnica jest taka, że za tę pracę dostajesz pieniądze, a za pieniądze kupujesz teren, którego nikt Ci nie zniszczy.</p>
+    </div>
+
+    <div class="feature">
+      <figure>
+        <img src="img/targ-1200.webp" srcset="img/targ-720.webp 720w, img/targ-1200.webp 1200w" sizes="(min-width:820px) 560px, 100vw"
+             width="1200" height="750" loading="lazy" alt="Czerwony targ z drewnianych bali w lobby serwera">
+        <figcaption>Targ w lobby. Tu zaczyna się każda osada.</figcaption>
+      </figure>
+      <div class="txt">
+        <h3>Zarabiasz tym, co i tak robisz</h3>
+        <p>Dołączasz do pracy komendą <code>/jobs join</code> i dostajesz pieniądze za zwykłe czynności. Każda praca ma 200 poziomów, a im wyższy poziom, tym lepsza stawka.</p>
+        <dl class="jobs">
+          <div><dt>Górnik</dt><dd>kamień i rudy</dd></div>
+          <div><dt>Drwal</dt><dd>ścinanie drzew</dd></div>
+          <div><dt>Rolnik</dt><dd>uprawy i zwierzęta</dd></div>
+          <div><dt>Rybak</dt><dd>łowienie ryb</dd></div>
+          <div><dt>Łowca</dt><dd>polowanie na moby</dd></div>
+          <div><dt>Budowniczy</dt><dd>stawianie bloków</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="feature flip">
+      <figure>
+        <img src="img/dzialki-1200.webp" srcset="img/dzialki-720.webp 720w, img/dzialki-1200.webp 1200w" sizes="(min-width:820px) 560px, 100vw"
+             width="1200" height="750" loading="lazy" alt="Drewniany budynek ze słomianym dachem w lobby o zmierzchu">
+        <figcaption>Budynki w lobby. Twoja działka może wyglądać jeszcze lepiej.</figcaption>
+      </figure>
+      <div class="txt">
+        <h3>Twoja działka, Twoje zasady</h3>
+        <p>Teren ogradzasz złotą łopatą. Na działce nikt poza Tobą nie postawi bloku, nie otworzy skrzyni i nie zrobi griefu.</p>
+        <ul>
+          <li>Na start <b>625 bloków</b>, czyli kwadrat 25 × 25.</li>
+          <li>Za każdą godzinę gry dostajesz <b>100 kolejnych</b>.</li>
+          <li>Resztę dokupisz po <b>15 $ za blok</b>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature">
+      <figure>
+        <img src="img/ekonomia-1200.webp" srcset="img/ekonomia-720.webp 720w, img/ekonomia-1200.webp 1200w" sizes="(min-width:820px) 560px, 100vw"
+             width="1200" height="750" loading="lazy" alt="Sklep w lobby z tabliczką: kup 12 $ za sztukę, sprzedaj 3 $ za sztukę">
+        <figcaption>Sklep serwera. Każdy towar ma cenę kupna i sprzedaży.</figcaption>
+      </figure>
+      <div class="txt">
+        <h3>Ekonomia, w której nowy gracz nadąża</h3>
+        <p>Każdy może zarobić najwyżej <b>6000 $ dziennie</b> z prac (reset o 04:00). Dzięki temu pieniądze nie tracą wartości, a osoby, które dołączą później, nie zostają daleko w tyle.</p>
+        <ul>
+          <li>Surowce sprzedajesz w skupie: <code>/sell hand</code>.</li>
+          <li>Możesz otworzyć własny sklep na skrzyni i handlować z innymi.</li>
+          <li>Kosmetyki (kolory nicku, tytuły) kupujesz za pieniądze z gry. Nic nie daje przewagi.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contest" id="konkurs">
+  <div class="wrap">
+    <div class="prize">
+      <span class="prize-n">2×</span>
+      <span class="prize-t"><b>Minecraft: Java Edition</b>do wygrania na start</span>
+    </div>
+    <div>
+      <p class="kicker">Konkurs na start</p>
+      <h2>Dojdź do 40 poziomu Górnika</h2>
+      <p style="margin-top:12px">Nagrody dostają dwie pierwsze osoby, które osiągną 40 poziom w pracy Górnik. Bez losowania. Kto ma już grę, może wybrać 75 zł w kodzie Paysafecard.</p>
+      <div class="goal">
+        <span>Termin: <b>22.11.2026, 23:59:59</b></span>
+        <span>Postęp: <code>/jobs stats</code></span>
+      </div>
+      <details>
+        <summary>Zasady konkursu</summary>
+        <div class="det">
+          <ul>
+            <li>Liczy się poziom pracy <b>Górnik</b>. Sprawdzisz go komendą <code>/jobs stats</code>.</li>
+            <li>Musisz mieć połączone konto z Discordem (<code>/discord link</code>). Nagrodę wysyłamy tylko na to konto.</li>
+            <li>Kolejność ustala ogłoszenie na Discordzie o osiągnięciu 40 poziomu.</li>
+            <li>Zakaz makr, farm AFK i wielu kont. Pełny regulamin jest na naszym <a href="https://discord.gg/qn88CyjqT">Discordzie</a>, na kanale <b>konkurs</b>.</li>
+          </ul>
+        </div>
+      </details>
+    </div>
   </div>
 </section>
 
 <section id="bonusy">
-  <h2>Happy Hour i Happy Weekend</h2>
-  <p>W wybranych godzinach dostajesz więcej pieniędzy za pracę. Bonus dotyczy zarobków ze wszystkich prac i włącza się sam, a informacja pojawia się na czacie.</p>
-  <div class="card tbl">
-    <table>
-      <thead><tr><th>Kiedy</th><th>Bonus do pieniędzy z prac</th></tr></thead>
-      <tbody>
-        <tr class="hl"><td><b>Happy Hour</b><br>poniedziałek–piątek, 19:00–20:00</td><td><b>x2</b> (podwójne zarobki)</td></tr>
-        <tr><td><b>Happy Weekend</b><br>sobota i niedziela, cały dzień</td><td><b>x1,25</b> (+25%)</td></tr>
-        <tr><td><b>Piątek</b><br>18:00–19:00 i od 20:00 do północy</td><td><b>x1,25</b> (+25%), a w piątek 19:00–20:00 działa Happy Hour x2</td></tr>
-      </tbody>
-    </table>
+  <div class="wrap split">
+    <div class="intro">
+      <p class="kicker">Kiedy grać</p>
+      <h2>Wieczorem zarabiasz więcej</h2>
+      <p>Bonusy włączają się same i dotyczą pieniędzy ze wszystkich prac. Informacja pojawia się na czacie.</p>
+    </div>
+    <div class="col">
+    <div class="days">
+      <div class="day hot"><b>Pon – pt</b><span>19:00–20:00 · Happy Hour</span><strong>x2</strong></div>
+      <div class="day"><b>Piątek</b><span>18:00–19:00 i 20:00–24:00</span><strong>x1,25</strong></div>
+      <div class="day"><b>Sob – nd</b><span>cały dzień · Happy Weekend</span><strong>x1,25</strong></div>
+    </div>
+
+    <div class="daily">
+      <h3>Codzienna nagroda</h3>
+      <p>Raz dziennie, po 10 minutach gry, wpisz <code>/nagroda</code> i zakręć kołem. Im dłuższa seria dni, tym lepsze szanse. Siódmego dnia z rzędu masz gwarantowaną co najmniej rzadką nagrodę, nawet 20 000 $.</p>
+    </div>
+
+    <div style="margin-top:20px">
+      <details>
+        <summary>Jak łączą się bonusy</summary>
+        <div class="det">
+          <ul>
+            <li>Bonus z <code>/nagroda</code> (+25% na 45 minut) <b>dodaje się</b> do Happy Hour i Happy Weekend. W Happy Hour masz więc x2,25.</li>
+            <li>Dzienny limit zarobków (6000 $, reset o 04:00) obowiązuje także podczas bonusów.</li>
+            <li>W weekend jest też większy dzienny limit doświadczenia z prac. Przydaje się w konkursie na 40 poziom.</li>
+          </ul>
+        </div>
+      </details>
+      <details>
+        <summary>Szanse w kole nagród (dzień 1–7)</summary>
+        <div class="det">
+          <div class="tbl">
+            <table>
+              <thead><tr><th>Dzień serii</th><th>Zwykła</th><th class="t1">Niezwykła</th><th class="t2">Rzadka</th><th class="t3">Legendarna</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>80%</td><td>17%</td><td>3%</td><td>0%</td></tr>
+                <tr><td>2</td><td>72%</td><td>22%</td><td>5%</td><td>1%</td></tr>
+                <tr><td>3</td><td>64%</td><td>27%</td><td>8%</td><td>1%</td></tr>
+                <tr><td>4</td><td>55%</td><td>35%</td><td>9%</td><td>1%</td></tr>
+                <tr><td>5</td><td>45%</td><td>38%</td><td>15%</td><td>2%</td></tr>
+                <tr><td>6</td><td>35%</td><td>42%</td><td>20%</td><td>3%</td></tr>
+                <tr class="hl"><td>7</td><td>0%</td><td>0%</td><td>95%</td><td>5%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="small">W 7. dniu zwykła i niezwykła nagroda są podnoszone do rzadkiej. Aktualną listę i szanse zobaczysz w grze: <code>/nagroda pula</code>.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Co można wylosować</summary>
+        <div class="det">
+          <ul>
+            <li><b>Zwykła:</b> 500 $</li>
+            <li><b class="t1">Niezwykła:</b> 1500 $ albo bonus +25% do zarobków na 2 godziny</li>
+            <li><b class="t2">Rzadka:</b> 5000 $ albo kolor nicku do wyboru w <code>/kolory</code></li>
+            <li><b class="t3">Legendarna:</b> 20 000 $ albo 10 000 $ i bonus +25% na 6 godzin</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+    </div>
   </div>
-  <ul style="margin-top:12px">
-    <li>Bonus z <code>/nagroda</code> (+25% na 45 minut) <b>dodaje się</b> do Happy Hour i Happy Weekend. W Happy Hour masz więc x2,25.</li>
-    <li>Dzienny limit zarobków (6000 $, reset o 04:00) obowiązuje także podczas bonusów.</li>
-    <li>W weekend jest też większy dzienny limit doświadczenia z prac. Przydaje się w konkursie na 40 poziom.</li>
-  </ul>
 </section>
 
-<section id="nagroda">
-  <h2>Codzienna nagroda i losowanie</h2>
-  <p>Raz dziennie wpisz <code>/nagroda</code> (po 10 minutach gry) i zakręć kołem nagród. Im dłuższa seria kolejnych dni, tym większa szansa na lepszą nagrodę. W 7. dniu serii masz gwarantowaną co najmniej rzadką nagrodę.</p>
-  <div class="card tbl">
-    <table>
-      <thead><tr><th>Dzień serii</th><th class="t0">Zwykła</th><th class="t1">Niezwykła</th><th class="t2">Rzadka</th><th class="t3">Legendarna</th></tr></thead>
-      <tbody>
-        <tr><td>1</td><td>80%</td><td>17%</td><td>3%</td><td>0%</td></tr>
-        <tr><td>2</td><td>72%</td><td>22%</td><td>5%</td><td>1%</td></tr>
-        <tr><td>3</td><td>64%</td><td>27%</td><td>8%</td><td>1%</td></tr>
-        <tr><td>4</td><td>55%</td><td>35%</td><td>9%</td><td>1%</td></tr>
-        <tr><td>5</td><td>45%</td><td>38%</td><td>15%</td><td>2%</td></tr>
-        <tr><td>6</td><td>35%</td><td>42%</td><td>20%</td><td>3%</td></tr>
-        <tr class="hl"><td>7</td><td>0%</td><td>0%</td><td>95%</td><td>5%</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="small" style="margin-top:8px">W 7. dniu zwykła i niezwykła nagroda są podnoszone do rzadkiej. Aktualną listę i szanse zobaczysz w grze: <code>/nagroda pula</code>.</p>
-  <div class="grid" style="margin-top:14px">
-    <div class="card t0b"><b>Zwykła</b><p class="small">500 $</p></div>
-    <div class="card t1b"><b>Niezwykła</b><p class="small">1500 $ albo bonus +25% do zarobków na 2 godziny</p></div>
-    <div class="card t2b"><b>Rzadka</b><p class="small">5000 $ albo kolor nicku do wyboru w <code>/kolory</code></p></div>
-    <div class="card t3b"><b>Legendarna</b><p class="small">20000 $ albo 10000 $ i bonus +25% na 6 godzin</p></div>
+<section id="dolacz" style="background:var(--surface);border-top:1px solid var(--line)">
+  <div class="wrap split">
+    <div class="intro">
+      <p class="kicker">Dołącz</p>
+      <h2>Wejdziesz w 2 minuty</h2>
+      <p>Bez modów i bez instalowania czegokolwiek. Wystarczy Minecraft Java.</p>
+    </div>
+    <div class="col">
+    <ol class="steps">
+      <li>
+        <div>
+          <h3>Dodaj serwer</h3>
+          <p>Uruchom Minecraft Java Edition w wersji 26.3, wejdź w <b>Tryb wieloosobowy → Dodaj serwer</b> i wklej adres.</p>
+          <div class="ip"><span class="ip-addr">mc.mala-osadka.pl</span><button class="btn btn-main" type="button" data-copy>Kopiuj IP</button></div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>Załóż konto</h3>
+          <p>Przy pierwszym wejściu wpisz <code>/register hasło hasło</code>, a przy kolejnych <code>/login hasło</code>. Na jednym adresie IP zarejestrujesz najwyżej 2 konta.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>Wybierz pracę i miejsce na dom</h3>
+          <p><code>/jobs join</code> wybiera pracę, <code>/rtp</code> przenosi Cię w losowe miejsce świata, a <code>/sethome</code> zapisuje Twój dom. Po 10 minutach odbierz <code>/nagroda</code>.</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="discord">
+      <p><b>Wpadnij też na Discorda</b>Ogłoszenia, wyniki konkursu, pomoc i ludzie do wspólnej gry.</p>
+      <a class="btn" href="https://discord.gg/qn88CyjqT" rel="noopener">Dołącz do Discorda</a>
+    </div>
+    </div>
   </div>
 </section>
 
-<section id="start">
-  <h2>Jak dołączyć</h2>
-  <ol style="padding-left:1.2em;margin:0">
-    <li>Uruchom Minecraft Java Edition i dodaj serwer o adresie <b id="addr2">mc.mala-osadka.pl</b>.</li>
-    <li>Po wejściu wpisz <code>/register hasło hasło</code>, a przy następnych wejściach <code>/login hasło</code>.</li>
-    <li>Na spawnie przeczytaj hologramy z zasadami i wybierz pierwszą pracę.</li>
-    <li>Dołącz na Discorda, gdzie ogłaszamy konkursy i zmiany.</li>
-  </ol>
-  <p class="small" style="margin-top:12px">Na jednym adresie IP można zarejestrować najwyżej 2 konta.</p>
+<section id="faq">
+  <div class="wrap split">
+    <div class="intro">
+      <p class="kicker">Pytania</p>
+      <h2>Zanim wejdziesz</h2>
+    </div>
+    <div class="col">
+    <details>
+      <summary>Czy muszę mieć konto premium?</summary>
+      <div class="det"><p>Nie. Wejdziesz z konta premium i non-premium. Konto na serwerze zabezpieczasz własnym hasłem przy pierwszym wejściu.</p></div>
+    </details>
+    <details>
+      <summary>Jaką wersją Minecrafta wejść?</summary>
+      <div class="det"><p>Minecraft Java Edition w wersji 26.3. Wersja Bedrock (telefony, konsole) nie jest obsługiwana.</p></div>
+    </details>
+    <details>
+      <summary>Czy coś jest płatne?</summary>
+      <div class="det"><p>Nie. Kosmetyki, takie jak kolory nicku i tytuły, kupujesz za pieniądze zarobione w grze (<code>/kosmetyki</code>). Żadna z nich nie daje przewagi w rozgrywce.</p></div>
+    </details>
+    <details>
+      <summary>Czy ktoś może zniszczyć mój dom?</summary>
+      <div class="det"><p>Nie, jeśli stoi na Twojej działce. Ogrodzony teren jest chroniony przed budowaniem, niszczeniem i otwieraniem skrzyń przez innych graczy. Grief i kradzież są zakazane regulaminem.</p></div>
+    </details>
+    <details>
+      <summary>Gdzie zgłosić błąd albo gracza?</summary>
+      <div class="det"><p>Na <a href="https://discord.gg/qn88CyjqT">Discordzie</a>. Tam też ogłaszamy zmiany i wyniki konkursów.</p></div>
+    </details>
+    </div>
+  </div>
 </section>
-
 </main>
 
-<footer><div class="wrap">Jesteśmy na <a href="https://minecraft.pl/serwery">minecraft.pl</a>. Zobacz <a href="https://minecraft.pl/serwery/mala-osadka">profil serwera Mała Osadka</a>.<br>Mała Osadka. Serwer nie jest powiązany z Mojang ani Microsoft.</div></footer>
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="img/logo-192.png" width="40" height="40" alt="">Mała Osadka</a>
+    <p>Adres serwera: <b style="color:var(--cream)">mc.mala-osadka.pl</b> · <a href="https://discord.gg/qn88CyjqT" rel="noopener">Discord</a> · <a href="https://minecraft.pl/serwery/mala-osadka" rel="noopener">profil na minecraft.pl</a></p>
+    <p>Mała Osadka nie jest powiązana z Mojang ani Microsoft.</p>
+  </div>
+</footer>
+
+<div class="dock" id="dock" aria-hidden="true">
+  <span>mc.mala-osadka.pl</span>
+  <button class="btn btn-main" type="button" data-copy tabindex="-1">Kopiuj IP</button>
+</div>
+<p class="sr" aria-live="polite" id="announce"></p>
 
 <script>
-// Zmień tylko tutaj po zakupie domeny, np. "mala-osadka.pl".
 var ADRES = "mc.mala-osadka.pl";
-document.getElementById("addr").textContent = ADRES;
-document.getElementById("addr2").textContent = ADRES;
+var START = Date.parse("2026-11-06T18:00:00+01:00"); // czas polski (CET)
 
-document.getElementById("copy").onclick = function () {
-  var b = this;
-  navigator.clipboard.writeText(ADRES).then(function () { b.textContent = "Skopiowano"; },
-    function () { b.textContent = "Zaznacz i skopiuj ręcznie"; });
-};
+// Kopiowanie adresu: Clipboard API, a gdy go brak (stare przegladarki) zaznaczenie + execCommand.
+function copied(btn, ok) {
+  var old = btn.getAttribute("data-label") || btn.textContent;
+  btn.setAttribute("data-label", old);
+  btn.textContent = ok ? "Skopiowano ✓" : "Skopiuj ręcznie";
+  document.getElementById("announce").textContent = ok ? "Skopiowano adres " + ADRES : "Zaznaczono adres, skopiuj go ręcznie";
+  if (!ok) { // zaznacz adres obok przycisku, zeby dalo sie go skopiowac recznie
+    var addr = btn.parentNode.querySelector(".ip-addr, span");
+    if (addr) window.getSelection().selectAllChildren(addr);
+  }
+  clearTimeout(btn._t);
+  btn._t = setTimeout(function () { btn.textContent = old; }, 2200);
+}
+function fallbackCopy() {
+  var t = document.createElement("textarea");
+  t.value = ADRES; t.setAttribute("readonly", ""); t.style.position = "fixed"; t.style.opacity = "0";
+  document.body.appendChild(t); t.select();
+  var ok = false; try { ok = document.execCommand("copy"); } catch (e) {}
+  document.body.removeChild(t);
+  return ok;
+}
+document.querySelectorAll("[data-copy]").forEach(function (b) {
+  b.addEventListener("click", function () {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(ADRES).then(function () { copied(b, true); }, function () { copied(b, fallbackCopy()); });
+    } else copied(b, fallbackCopy());
+  });
+});
 
+// Licznik do startu.
+var heroIn = document.getElementById("hero-in");
+function pad(n) { return (n < 10 ? "0" : "") + n; }
+function tick() {
+  var s = Math.floor((START - Date.now()) / 1000);
+  if (s <= 0) {
+    heroIn.classList.add("is-live");
+    document.getElementById("sticker").textContent = "SERWER DZIAŁA";
+    return false;
+  }
+  document.getElementById("cd-d").textContent = Math.floor(s / 86400);
+  document.getElementById("cd-h").textContent = pad(Math.floor(s % 86400 / 3600));
+  document.getElementById("cd-m").textContent = pad(Math.floor(s % 3600 / 60));
+  document.getElementById("cd-s").textContent = pad(s % 60);
+  return true;
+}
+if (tick()) var timer = setInterval(function () { if (!tick()) clearInterval(timer); }, 1000);
+
+// Status serwera (drugorzedny): pokazujemy tylko, gdy sa dane.
 function status() {
   fetch("https://api.mcsrvstat.us/3/" + encodeURIComponent(ADRES))
     .then(function (r) { return r.json(); })
     .then(function (d) {
-      var on = d.online === true;
-      document.getElementById("dot").className = "dot " + (on ? "on" : "off");
-      document.getElementById("state").textContent = on ? "Online" : "Offline";
-      document.getElementById("players").textContent = on && d.players ? d.players.online + " / " + d.players.max : "–";
-      document.getElementById("ver").textContent = on && d.version ? d.version : "–";
+      var pill = document.getElementById("pill"), on = d.online === true;
+      pill.className = "pill " + (on ? "on" : "off");
+      document.getElementById("pill-t").textContent = on && d.players
+        ? "Online · " + d.players.online + "/" + d.players.max : "Offline";
+      pill.hidden = false;
     })
-    .catch(function () {
-      document.getElementById("state").textContent = "Brak danych";
-    });
+    .catch(function () {});
 }
 status();
 setInterval(status, 60000);
+
+// Pasek z adresem na telefonie, gdy adres z hero zniknie z ekranu.
+var dock = document.getElementById("dock"), heroIp = document.getElementById("ip"), docked = false;
+function dockUpdate() {
+  var past = heroIp.getBoundingClientRect().bottom < 0;
+  if (past === docked) return;
+  docked = past;
+  dock.classList.toggle("show", past);
+  dock.setAttribute("aria-hidden", past ? "false" : "true");
+  dock.querySelector("button").tabIndex = past ? 0 : -1;
+}
+addEventListener("scroll", dockUpdate, { passive: true });
+dockUpdate();
 </script>
 </body>
 </html>
